@@ -15,22 +15,31 @@ class DiceGame(object):
         max = 6
         self.sixSidedRoll = (random.randint(min,max))
         dg.PromptUserForRoll(self.sixSidedRoll)
+        print ("Six side dice chosen")
         
-
         
     def ChooseTwelveSided(self):
         min = 1
         max = 12
         self.twelveSidedRoll=(random.randint(min,max))
         dg.PromptUserForRoll(self.twelveSidedRoll)
+
+    def ChooseTwentySided(self):
+        min = 1
+        max = 20
+        self.twentySidedRoll = (random.randint(min, max))
+        dg.PromptUserForRoll(self.twentySidedRoll)
+         
         
 
     def ChooseDiceType(self):
-        userChoice = (str(raw_input("Choose Dice Type: 6 sided, or 12 Sided:  ")))
+        userChoice = (str(raw_input("Choose Dice Type: 6 sided, 12 sided, or 20 sided :  ")))
         if userChoice == "6":
             dg.ChooseSixSided()
         elif userChoice == "12":
             dg.ChooseTwelveSided()
+        elif userChoice == "20":
+            dg.ChooseTwentySided()
         else:
             print("Please Enter a valid Dice Choice: ")
             dg.ChooseDiceType()
@@ -53,14 +62,14 @@ class DiceGame(object):
         
         self.PlayerOneRoll = actualRoll
         print("Player One has Rolled")
-        print(self.PlayerOneRoll)
+        #print(self.PlayerOneRoll)
         return self.PlayerOneRoll
 
     def PlayerTwoRollDice(self, actualRoll):
         
         self.PlayerTwoRoll = actualRoll
         print("player Two has Rolled")
-        print(self.PlayerTwoRoll)
+        #print(self.PlayerTwoRoll)
         return self.PlayerTwoRoll
       
 
